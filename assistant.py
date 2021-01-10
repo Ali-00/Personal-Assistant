@@ -60,10 +60,8 @@ def wish():
 
 if __name__ == "__main__":
     wish()
-    # takecommand()
-    # speak("This is advance jarvis")
+    
     while True:
-    # if 1:
 
         query = takecommand().lower()
 
@@ -82,6 +80,3 @@ if __name__ == "__main__":
         elif "close notepad" in query:
             speak("ok sir, closing notepad")
             os.system("taskkill /f /im notepad.exe")
-
-
-        # speak("sir, do you have any other work.")

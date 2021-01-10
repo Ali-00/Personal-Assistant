@@ -66,8 +66,10 @@ if __name__ == "__main__":
         query = takecommand().lower()
 
         if "open notepad" in query:
-            # npath = "C:\\Windows\\system32\\notepad.exe"
-            # os.startfile(npath)
+            npath = "C:\\Windows\\system32\\notepad.exe"
+            os.startfile(npath)
+            
+        elif "open notepad for writing" in query:
             speak("what should i write on notepad file...")
             ck = takecommand().lower()
             f = open("record.txt", "w")

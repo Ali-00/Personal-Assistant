@@ -82,9 +82,21 @@ if __name__ == "__main__":
         elif "open adobe reader" in query:
             npath = "C:\\Program Files (x86)\\Adobe\\Reader 11.0\\Reader\\AcroRd32.exe"
             os.startfile(npath)
+            
         elif "open command prompt" in query:
             os.system("start cmd")
 
         elif "close notepad" in query:
             speak("ok sir, closing notepad")
             os.system("taskkill /f /im notepad.exe")
+            
+        elif "open camera" in query:
+            cap = cv2.VideoCapture(0)
+            while True:
+                ret, img = cap.read()
+                cv2.imshow('webcam', img)
+                k = cv2.waitKey(50)
+                if k==27:
+                    break;
+            cap.release()
+            cv2.destroyAllWindows()

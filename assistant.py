@@ -102,7 +102,7 @@ if __name__ == "__main__":
             cv2.destroyAllWindows()
             
         elif "play music" in query:
-            music_dir = "C:\\Users\\Hp\\Downloads\\Video"
+            music_dir = "C:\\Users\\Hp\\Downloads\\Video" #give your own music directory path
             songs = os.listdir(music_dir)
             rd = random.choice(songs)
             os.startfile(os.path.join(music_dir, rd))

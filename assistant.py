@@ -78,6 +78,12 @@ if __name__ == "__main__":
 
         elif "what is your name" in query:
             speak("People call me assistant. I am created by ali.")
+            
+        elif "open adobe reader" in query:
+            npath = "C:\\Program Files (x86)\\Adobe\\Reader 11.0\\Reader\\AcroRd32.exe"
+            os.startfile(npath)
+        elif "open command prompt" in query:
+            os.system("start cmd")
 
         elif "close notepad" in query:
             speak("ok sir, closing notepad")

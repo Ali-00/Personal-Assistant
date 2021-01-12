@@ -118,3 +118,6 @@ if __name__ == "__main__":
         elif "ip address" in query:
             ip = get('https://api.ipify.org').text
             speak(f"Your IP address is {ip}")
+            
+        elif "open youtube" in query:
+            webbrowser.open("www.youtube.com")

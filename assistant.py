@@ -106,3 +106,11 @@ if __name__ == "__main__":
             songs = os.listdir(music_dir)
             rd = random.choice(songs)
             os.startfile(os.path.join(music_dir, rd))
+            
+        elif "wikipedia" in query:
+            speak("searching wikipedia....")
+            query = query.replace("wikipedia", "")
+            results = wikipedia.summary(query, sentences=2)
+            speak("According to wikipedia")
+            speak(results)
+            print(results)

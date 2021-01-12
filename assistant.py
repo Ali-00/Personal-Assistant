@@ -114,3 +114,7 @@ if __name__ == "__main__":
             speak("According to wikipedia")
             speak(results)
             print(results)
+            
+        elif "ip address" in query:
+            ip = get('https://api.ipify.org').text
+            speak(f"Your IP address is {ip}")

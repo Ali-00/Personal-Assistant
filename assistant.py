@@ -132,3 +132,8 @@ if __name__ == "__main__":
             speak("sir, what should i search on google")
             cm = takecommand().lower()
             webbrowser.open(f"{cm}")
+            
+        elif "play song on youtube" in query:
+            speak("sir, which song should i play for you...")
+            yt = takecommand().lower()
+            kit.playonyt(f"{yt}")

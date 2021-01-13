@@ -124,3 +124,11 @@ if __name__ == "__main__":
 
         elif "open facebook" in query:
             webbrowser.open("www.facebook.com")
+            
+        elif "open stack overflow" in query:
+            webbrowser.open("www.stackoverflow.com")
+            
+        elif "open google" in query:
+            speak("sir, what should i search on google")
+            cm = takecommand().lower()
+            webbrowser.open(f"{cm}")

@@ -137,3 +137,54 @@ if __name__ == "__main__":
             speak("sir, which song should i play for you...")
             yt = takecommand().lower()
             kit.playonyt(f"{yt}")
+            
+        elif "send email" in query:
+            # try:
+            #     speak("what should i say?")
+            #     content = takecommand().lower()
+            #     to = "muzamalali.a@gmail.com"
+            #     sendEmail(to, content)
+            #     speak("Email has been sent")
+            #
+            # except Exception as e:
+            #     print(e)
+            #     speak("sorry sir, i am not able to send this mail.")
+            speak("sir what should i say")
+            query = takecommand().lower()
+            if "send a file" in query:
+                email = 'muzamalali.a@gmail.com'
+                password = 'password'
+                send_to_email = 'person@gmail.com'
+                speak("okay sir, what is the subject for this email")
+                query = takecommand().lower()
+                subject = query
+                speak("and sir, what is the message for this email")
+                query2 = takecommand().lower()
+                message = query2
+                speak("sir please enter the correct path of the file into the shell")
+                file_location = input("please enter the path here")
+
+                speak("please wait, i am sending email now")
+
+                msg = MIMEMultipart()
+                msg['From'] = email
+                msg['To'] = send_to_email
+                msg['Subject'] = subject
+
+                msg.attach(MIMEText(message, 'plain'))
+
+                filename = os.path.basename(file_location)
+                attachment = open(file_location, "rb")
+                part = MIMEBase('application', 'octet-stream')
+                encoders.encode_base64(part)
+                part.add_header('Content-Dispositon', "attachment; filename= %s" % filename)
+
+                msg.attach(part)
+
+                server = smtplib.SMTP('smtp.gmail.com', 587)
+                server.starttls()
+                server.login(email,password)
+                text = msg.as_string()
+                server.sendmail(email,send_to_email,text)
+                server.quit()
+                speak("email has been sent")

@@ -139,16 +139,7 @@ if __name__ == "__main__":
             kit.playonyt(f"{yt}")
             
         elif "send email" in query:
-            # try:
-            #     speak("what should i say?")
-            #     content = takecommand().lower()
-            #     to = "muzamalali.a@gmail.com"
-            #     sendEmail(to, content)
-            #     speak("Email has been sent")
-            #
-            # except Exception as e:
-            #     print(e)
-            #     speak("sorry sir, i am not able to send this mail.")
+            
             speak("sir what should i say")
             query = takecommand().lower()
             if "send a file" in query:

@@ -22,7 +22,6 @@ engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voices', voices[0].id)
 
-
 def speak(audio):
     engine.say(audio)
     print(audio)
@@ -34,12 +33,10 @@ def takecommand():
         print("Listening...")
         r.pause_threshold = 1
         audio = r.listen(source, timeout=10, phrase_time_limit=5)
-
     try:
         print("Recognizing...")
         query = r.recognize_google(audio, language='en-in')
         print(f"user said: {query}")
-
     except Exception as e:
         speak("Say that again please...")
         return "none"
@@ -142,7 +139,7 @@ if __name__ == "__main__":
             speak("sir what should i say")
             query = takecommand().lower()
             if "send a file" in query:
-                email = 'muzamalali.a@gmail.com'
+                email = 'email.com' # Your email
                 password = 'password'
                 send_to_email = 'person@gmail.com'
                 speak("okay sir, what is the subject for this email")

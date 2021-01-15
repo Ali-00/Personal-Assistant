@@ -175,3 +175,16 @@ if __name__ == "__main__":
                 server.sendmail(email,send_to_email,text)
                 server.quit()
                 speak("email has been sent")
+              
+            else:
+                email = 'muzamalali.a@gmail.com'
+                password = 'password'
+                send_to_email = 'person@gmail.com'
+                message = query
+
+                server = smtplib.SMTP('smtp.gmail.com', 587)
+                server.starttls()
+                server.login(email, password)
+                server.sendmail(email, send_to_email, message)
+                server.quit()
+                speak("email has been sent")

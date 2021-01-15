@@ -188,3 +188,14 @@ if __name__ == "__main__":
                 server.sendmail(email, send_to_email, message)
                 server.quit()
                 speak("email has been sent")
+                
+        elif "you can sleep" in query:
+            speak("thanks for using me sir, have a good day.")
+            sys.exit()
+
+        elif "set alarm" in query:
+            nn = int(datetime.datetime.now().hour)
+            if nn==22:
+                music_dir = "C:\\Users\\Hp\\Downloads\\Video" #give path of tone
+                songs = os.listdir(music_dir)
+                os.startfile(os.path.join(music_dir, songs[0]))

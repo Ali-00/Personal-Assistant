@@ -212,3 +212,9 @@ if __name__ == "__main__":
 
         elif "sleep the system" in query:
             os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
+            
+        elif "switch the tab" in query:
+            pyautogui.keyDown("alt")
+            pyautogui.press("tab")
+            time.sleep(1)
+            pyautogui.keyUp("alt")

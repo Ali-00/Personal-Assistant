@@ -206,3 +206,9 @@ if __name__ == "__main__":
 
         elif "shut down the system" in query:
             os.system("shutdown /s /t 5")
+            
+        elif "restart the system" in query:
+            os.system("shutdown /r /t 5")
+
+        elif "sleep the system" in query:
+            os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")

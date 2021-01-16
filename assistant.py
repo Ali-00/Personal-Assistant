@@ -199,3 +199,10 @@ if __name__ == "__main__":
                 music_dir = "C:\\Users\\Hp\\Downloads\\Video" #give path of tone
                 songs = os.listdir(music_dir)
                 os.startfile(os.path.join(music_dir, songs[0]))
+                
+        elif "tell me a joke" in query:
+            joke = pyjokes.get_joke()
+            speak(joke)
+
+        elif "shut down the system" in query:
+            os.system("shutdown /s /t 5")

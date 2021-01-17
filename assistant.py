@@ -53,8 +53,7 @@ def wish():
     else:
         speak(f"Good Evening, its {tt}")
     speak("I am assistant sir. Please tell me how can I help you")
-    
-    
+       
 def news():
     main_url = 'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=6863afd1ce5f4262bd31c7d09feab819'
     main_page = requests.get(main_url).json()
@@ -68,9 +67,7 @@ def news():
 
 if __name__ == "__main__":
     wish()
-    
     while True:
-
         query = takecommand().lower()
 
         if "open notepad" in query:
@@ -162,24 +159,20 @@ if __name__ == "__main__":
                 message = query2
                 speak("sir please enter the correct path of the file into the shell")
                 file_location = input("please enter the path here")
-
+                
                 speak("please wait, i am sending email now")
 
                 msg = MIMEMultipart()
                 msg['From'] = email
                 msg['To'] = send_to_email
                 msg['Subject'] = subject
-
                 msg.attach(MIMEText(message, 'plain'))
-
                 filename = os.path.basename(file_location)
                 attachment = open(file_location, "rb")
                 part = MIMEBase('application', 'octet-stream')
                 encoders.encode_base64(part)
                 part.add_header('Content-Dispositon', "attachment; filename= %s" % filename)
-
                 msg.attach(part)
-
                 server = smtplib.SMTP('smtp.gmail.com', 587)
                 server.starttls()
                 server.login(email,password)
@@ -193,7 +186,6 @@ if __name__ == "__main__":
                 password = 'password'
                 send_to_email = 'person@gmail.com'
                 message = query
-
                 server = smtplib.SMTP('smtp.gmail.com', 587)
                 server.starttls()
                 server.login(email, password)

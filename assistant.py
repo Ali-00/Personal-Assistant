@@ -218,3 +218,7 @@ if __name__ == "__main__":
             pyautogui.press("tab")
             time.sleep(1)
             pyautogui.keyUp("alt")
+            
+        elif "tell me news" in query:
+            speak("please wait sir, feteching the latest news")
+            news()

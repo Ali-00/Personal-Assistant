@@ -53,6 +53,18 @@ def wish():
     else:
         speak(f"Good Evening, its {tt}")
     speak("I am assistant sir. Please tell me how can I help you")
+    
+    
+def news():
+    main_url = 'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=6863afd1ce5f4262bd31c7d09feab819'
+    main_page = requests.get(main_url).json()
+    articles = main_page["articles"]
+    head = []
+    day = ["first","second","third","fourth","fifth","sixth","seventh","eighth","ninth","tenth"]
+    for ar in articles:
+        head.append(ar["title"])
+    for i in range (len(day)):
+        speak(f"today's {day[i]} news is {head[i]}")
 
 if __name__ == "__main__":
     wish()

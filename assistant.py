@@ -226,3 +226,18 @@ if __name__ == "__main__":
         elif "tell me news" in query:
             speak("please wait sir, feteching the latest news")
             news()
+            
+        elif "where i am" in query:
+            speak("wait sir, let me check")
+            try:
+                ipAdd = requests.get('https://api.ipify.org').text
+                print(ipAdd)
+                url = 'https://get.geojs.io/v1/ip/geo/'+ipAdd+'.json'
+                geo_requests = requests.get(url)
+                geo_data = geo_requests.json()
+                city = geo_data['city']
+                country = geo_data['country']
+                speak(f"sir i am not sure, but i think we are in {city} city of {country} country")
+            except Exception as e:
+                speak("sorry sir, Due to network issue i am not able to find where we are.")
+                pass

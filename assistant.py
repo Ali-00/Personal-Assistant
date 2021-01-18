@@ -241,3 +241,18 @@ if __name__ == "__main__":
             except Exception as e:
                 speak("sorry sir, Due to network issue i am not able to find where we are.")
                 pass
+            
+        elif "instagram profile" in query or "profile on instagram" in query:
+            speak("sir please enter user name correctly.")
+            name = input("Enter user name")
+            webbrowser.open(f"www.instagram.com/{name}")
+            speak(f"sir here is the profile of the user {name}")
+            time.sleep(2)
+            speak("sir would you like to download the profile picture of this account")
+            condition = takecommand().lower()
+            if "yes" in condition:
+                mod = instaloader.Instaloader()
+                mod.download_profile(name, profile_pic_only = True)
+                speak("i am done sir, profile picture is saved in our main folder. now i am ready for next command")
+            else:
+                pass

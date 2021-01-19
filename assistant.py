@@ -64,6 +64,17 @@ def news():
         head.append(ar["title"])
     for i in range (len(day)):
         speak(f"today's {day[i]} news is {head[i]}")
+        
+def pdf_reader():
+    book = open('Binary_Search_Trees.pdf','rb')
+    pdfReader = PyPDF2.PdfFileReader(book)
+    pages = pdfReader.numPages
+    speak(f"Total number of pages in this book {pages}")
+    speak("sir please enter the page number i have to read")
+    pg = int(input("Please enter the page number: "))
+    page = pdfReader.getPage(pg)
+    text = page.extractText()
+    speak(text)
 
 if __name__ == "__main__":
     wish()
@@ -265,3 +276,6 @@ if __name__ == "__main__":
             img = pyautogui.screenshot()
             img.save(f"{name}.png")
             speak("i am done sir, the screenshot is saved in our main folder. now i am ready for next command.")
+            
+        elif "read pdf" in query:
+            pdf_reader()

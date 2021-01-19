@@ -256,3 +256,12 @@ if __name__ == "__main__":
                 speak("i am done sir, profile picture is saved in our main folder. now i am ready for next command")
             else:
                 pass
+            
+        elif "take screenshot" in query or "take a screenshot" in query:
+            speak("sir, please tell me the name for this screenshot file")
+            name = takecommand().lower()
+            speak("please sir hold the screen for few seconds, i am taking screenshot")
+            time.sleep(2)
+            img = pyautogui.screenshot()
+            img.save(f"{name}.png")
+            speak("i am done sir, the screenshot is saved in our main folder. now i am ready for next command.")

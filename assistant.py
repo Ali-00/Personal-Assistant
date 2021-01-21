@@ -193,7 +193,7 @@ if __name__ == "__main__":
                 speak("email has been sent")
               
             else:
-                email = 'muzamalali.a@gmail.com'
+                email = 'example@gmail.com'
                 password = 'password'
                 send_to_email = 'person@gmail.com'
                 message = query

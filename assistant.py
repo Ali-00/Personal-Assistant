@@ -75,6 +75,12 @@ def pdf_reader():
     page = pdfReader.getPage(pg)
     text = page.extractText()
     speak(text)
+    
+def transl():
+    translator = Translator()
+    convert = takecommand()
+    output = translator.translate(convert, src='en', dest='ur')
+    speak(output.text)
 
 if __name__ == "__main__":
     wish()
@@ -279,3 +285,6 @@ if __name__ == "__main__":
             
         elif "read pdf" in query:
             pdf_reader()
+            
+        elif "translate" in query:
+            transl()

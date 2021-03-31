@@ -6,11 +6,11 @@ Message: this is testing protocol
 --------------------
 Date: 7:11:2020
 Time: 2:25
-Phone number: +923165975260
+Phone number: ----------------
 Message: this is testing protocol
 --------------------
 Date: 10:11:2020
 Time: 2:25
-Phone number: +923165975260
+Phone number: ----------------
 Message: this is testing protocol
 --------------------
